@@ -5,6 +5,17 @@ class BooksRepository {
 
     init{
         bookList.add(Book(1,"Rayuela","Cortazar",1945))
+        bookList.add(Book(2,"El Aleph1","Borges",1945))
+        bookList.add(Book(2,"El Aleph2","Borges",1945))
+        bookList.add(Book(2,"El Aleph","Borges",1945))
+        bookList.add(Book(2,"El Aleph","Borges",1945))
+        bookList.add(Book(2,"El Aleph","Borges",1945))
+        bookList.add(Book(2,"El Aleph","Borges",1945))
+        bookList.add(Book(2,"El Aleph","Borges",1945))
+        bookList.add(Book(2,"El Aleph","Borges",1945))
+        bookList.add(Book(2,"El Aleph","Borges",1945))
+        bookList.add(Book(2,"El Aleph","Borges",1945))
+        bookList.add(Book(2,"El Aleph","Borges",1945))
         bookList.add(Book(2,"El Aleph","Borges",1945))
 
     }

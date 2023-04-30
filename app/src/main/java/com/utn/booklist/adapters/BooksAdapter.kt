@@ -4,11 +4,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.utn.booklist.R
 import com.utn.booklist.entities.Book
 
-class BooksAdapter(var bookList : MutableList <Book>) : RecyclerView.Adapter<BooksAdapter.BooksHolder>() {
+class BooksAdapter(var bookList : MutableList <Book>,
+                   var onClick : (Int) -> Unit) : RecyclerView.Adapter<BooksAdapter.BooksHolder>() {
     class BooksHolder(v: View) : RecyclerView.ViewHolder(v) {
         private var view: View
 
@@ -22,6 +24,9 @@ class BooksAdapter(var bookList : MutableList <Book>) : RecyclerView.Adapter<Boo
         fun setAuthor (author : String){
             var txtAuthor : TextView = view.findViewById(R.id.txtAuthor)
             txtAuthor.text = author
+        }
+        fun getCard() : CardView{
+            return view.findViewById(R.id.cardBook)
         }
 
     }
@@ -38,5 +43,9 @@ class BooksAdapter(var bookList : MutableList <Book>) : RecyclerView.Adapter<Boo
     override fun onBindViewHolder(holder: BooksHolder, position: Int) {
         holder.setTitle(bookList[position].title)
         holder.setAuthor(bookList[position].author)
+        holder.getCard().setOnClickListener {
+            onClick(position)
+
+        }
     }
-}
+    }

@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.snackbar.Snackbar
 import com.utn.booklist.R
 import com.utn.booklist.adapters.BooksAdapter
 import com.utn.booklist.entities.BooksRepository
@@ -29,7 +30,9 @@ class BookListFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        adapter = BooksAdapter(BookRepository.bookList)
+        adapter = BooksAdapter(BookRepository.bookList){position ->
+            Snackbar.make(v,"click en ${BookRepository.bookList[position].title}",Snackbar.LENGTH_LONG).show()
+        }
         BookList.layoutManager= LinearLayoutManager(context)
         BookList.adapter=adapter
     }
