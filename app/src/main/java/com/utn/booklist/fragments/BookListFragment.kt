@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
@@ -31,12 +32,17 @@ class BookListFragment : Fragment() {
     override fun onStart() {
         super.onStart()
         adapter = BooksAdapter(BookRepository.bookList){position ->
-            Snackbar.make(v,"click en ${BookRepository.bookList[position].title}",Snackbar.LENGTH_LONG).show()
+            onItemClick(position)
+
         }
         BookList.layoutManager= LinearLayoutManager(context)
         BookList.adapter=adapter
     }
 
+    fun onItemClick (pos : Int){
 
+        val action = BookListFragmentDirections.actionBookListFragmentToBookDetailFragment(pos)
+        findNavController().navigate(action)
+    }
 
 }

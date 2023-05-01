@@ -18,5 +18,9 @@
         android:id="@+id/bookDetailFragment"
         android:name="com.utn.booklist.fragments.BookDetailFragment"
         android:label="fragment_book_detail"
-        tools:layout="@layout/fragment_book_detail" />
+        tools:layout="@layout/fragment_book_detail" >
+        <argument
+            android:name="Argumento"
+            app:argType="integer" />
+    </fragment>
 </navigation>

@@ -6,11 +6,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.google.android.material.snackbar.Snackbar
 import com.utn.booklist.R
 
 class BookDetailFragment : Fragment() {
 
     lateinit var v : View
+    var arg : Int = 0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -22,6 +24,9 @@ class BookDetailFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
+        arg = BookDetailFragmentArgs.fromBundle(requireArguments()).Argumento
+        Snackbar.make(v, "click en $arg", Snackbar.LENGTH_LONG).show()
+
     }
 
 
