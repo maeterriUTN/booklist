@@ -48,7 +48,8 @@ class BookListFragment : Fragment() {
         userDao?.insertBook(Book(4,"Un mundo felíz","Aldous Huxley","","",1932))
         userDao?.insertBook(Book(5,"Sobre Heroes y Tumbas","Ernesto Sabato","","",1961))
         userDao?.insertBook(Book(6,"Las intermintencias de la Muerte","José Saramago","","",2005))
-        userDao?.insertBook(Book(7,"Libroprueba1","Juancho","","",1940))
+        userDao?.insertBook(Book(7,"Las venas abiertas de América Latina","Eduardo Galeano","","",1971))
+        userDao?.insertBook(Book(8,"El arte de la guerra","Tsun Tzu","","",-400))
         prueba2 = userDao?.getAll()
         prueba = prueba2!!
         //prueba = userDao?.fetchAllBooks()
