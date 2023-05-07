@@ -64,4 +64,12 @@
         app:layout_constraintEnd_toEndOf="@+id/buttonEdit"
         app:layout_constraintStart_toStartOf="@+id/buttonEdit"
         app:layout_constraintTop_toBottomOf="@+id/buttonEdit" />
+
+    <ImageView
+        android:id="@+id/imageViewBook"
+        android:layout_width="168dp"
+        android:layout_height="126dp"
+        app:layout_constraintEnd_toEndOf="@+id/buttonAdd"
+        app:layout_constraintStart_toStartOf="@+id/buttonAdd"
+        app:layout_constraintTop_toBottomOf="@+id/buttonAdd" />
 </androidx.constraintlayout.widget.ConstraintLayout>
