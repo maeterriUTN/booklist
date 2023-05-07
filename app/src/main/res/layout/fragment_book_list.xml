@@ -5,7 +5,8 @@
     android:id="@+id/frameLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.BookListFragment" >
+    android:layout_marginVertical="100dp"
+    tools:context=".fragments.BookListFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/BookList"

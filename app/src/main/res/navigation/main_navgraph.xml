@@ -22,5 +22,17 @@
         <argument
             android:name="Argumento"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_bookDetailFragment_to_addEditFragment"
+            app:destination="@id/addEditFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addEditFragment"
+        android:name="com.utn.booklist.fragments.AddEditFragment"
+        android:label="fragment_add_edit"
+        tools:layout="@layout/fragment_add_edit" >
+        <argument
+            android:name="arg2"
+            app:argType="integer" />
     </fragment>
 </navigation>

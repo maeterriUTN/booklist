@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout3"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginVertical="100dp"
+    tools:context=".fragments.AddEditFragment">
+
+    <EditText
+        android:id="@+id/editTextTitle"
+        android:layout_width="333dp"
+        android:layout_height="38dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Titulo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextAuthor"
+        android:layout_width="339dp"
+        android:layout_height="43dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Autor"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTitle"
+        app:layout_constraintStart_toStartOf="@+id/editTextTitle"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTitle" />
+
+    <EditText
+        android:id="@+id/editTextTextYear"
+        android:layout_width="331dp"
+        android:layout_height="38dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Año"
+        app:layout_constraintEnd_toEndOf="@+id/editTextAuthor"
+        app:layout_constraintStart_toStartOf="@+id/editTextAuthor"
+        app:layout_constraintTop_toBottomOf="@+id/editTextAuthor" />
+
+    <EditText
+        android:id="@+id/editTextTextDescription"
+        android:layout_width="328dp"
+        android:layout_height="46dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Descripción"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextYear"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextYear"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextYear" />
+
+    <EditText
+        android:id="@+id/editTextTextURL"
+        android:layout_width="319dp"
+        android:layout_height="53dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="URL Imagen"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextDescription"
+        app:layout_constraintHorizontal_bias="0.56"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextDescription"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextDescription" />
+
+    <Button
+        android:id="@+id/buttonAccept"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="116dp"
+        android:text="Aceptar"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextURL"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextURL"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextURL" />
+</androidx.constraintlayout.widget.ConstraintLayout>

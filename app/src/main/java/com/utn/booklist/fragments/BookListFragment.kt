@@ -44,7 +44,7 @@ class BookListFragment : Fragment() {
         userDao = db?.userDao()
         userDao?.insertBook(Book(1,"El Aleph","Jorge Luis Borges","","",1949))
         userDao?.insertBook(Book(2,"Rayuela","Julio Cortazar","","",1963))
-        userDao?.insertBook(Book(3,"Una Cama Limpia Para Morir","Mariela Gurevich","","",2022))
+        userDao?.insertBook(Book(3,"Una Cama Limpia Para Morir","Mariela Gurevich","Hay dos mundos. Uno adentro, el otro afuera. Uno que se vuelve opresivo, mientras el otro se dibuja como utopía. Hay dos mundos: el que habitan las travas que son arriadas como ganado al matadero para ser carne de experimentación","",2022))
         userDao?.insertBook(Book(4,"Un mundo felíz","Aldous Huxley","","",1932))
         userDao?.insertBook(Book(5,"Sobre Heroes y Tumbas","Ernesto Sabato","","",1961))
         userDao?.insertBook(Book(6,"Las intermintencias de la Muerte","José Saramago","","",2005))

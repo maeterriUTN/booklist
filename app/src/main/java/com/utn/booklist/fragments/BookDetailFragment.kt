@@ -6,7 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
 import com.utn.booklist.R
 import com.utn.booklist.entities.AppDatabase
@@ -20,6 +22,8 @@ class BookDetailFragment : Fragment() {
     lateinit var txtAuthor : TextView
     lateinit var txtYear : TextView
     lateinit var txtDescription : TextView
+    lateinit var btnEdit : Button
+    lateinit var btnAdd : Button
     lateinit var v : View
     var arg : Int = 0
     private var db: AppDatabase? = null
@@ -34,6 +38,8 @@ class BookDetailFragment : Fragment() {
         txtTitle=v.findViewById(R.id.txtTitleDescription)
         txtYear=v.findViewById(R.id.txtYearDescription)
         txtDescription=v.findViewById(R.id.txtDescription)
+        btnEdit=v.findViewById(R.id.buttonEdit)
+        btnAdd=v.findViewById(R.id.buttonAdd)
 
 
         return v
@@ -46,11 +52,22 @@ class BookDetailFragment : Fragment() {
         arg = BookDetailFragmentArgs.fromBundle(requireArguments()).Argumento
         listOfBook = userDao?.getAll()
         listOfBook2=listOfBook!!
-        txtTitle.setText(listOfBook2[arg].title)
-        txtAuthor.setText(listOfBook2[arg].author)
-        txtYear.setText(listOfBook2[arg].year.toString())
-        txtDescription.setText(listOfBook2[arg].description)
+        txtTitle.setText("Titulo:"+listOfBook2[arg].title)
+        txtAuthor.setText("Autor:"+listOfBook2[arg].author)
+        txtYear.setText("año"+listOfBook2[arg].year.toString())
+        txtDescription.setText("Descripción"+listOfBook2[arg].description)
         Snackbar.make(v, listOfBook2[arg].title, Snackbar.LENGTH_LONG).show()
+
+        btnEdit.setOnClickListener {
+            val action = BookDetailFragmentDirections.actionBookDetailFragmentToAddEditFragment(arg)
+            findNavController().navigate(action)
+
+        }
+        btnAdd.setOnClickListener {
+            val action = BookDetailFragmentDirections.actionBookDetailFragmentToAddEditFragment(-1)
+            findNavController().navigate(action)
+
+        }
 
     }
 
