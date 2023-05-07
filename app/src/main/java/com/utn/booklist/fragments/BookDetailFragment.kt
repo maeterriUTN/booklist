@@ -28,7 +28,7 @@ class BookDetailFragment : Fragment() {
     lateinit var btnAdd : Button
     lateinit var viewBook : ImageView
     lateinit var v : View
-    var arg : Int = 0
+    var arg : Int = 1
     private var db: AppDatabase? = null
     private var userDao: UserDao? = null
 
