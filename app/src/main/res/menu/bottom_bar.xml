@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/bookListFragment"
+        android:id="@+id/userFragment"
 
-        android:title="Indice" />
+        android:title="Usuarios" />
 
     <item
-        android:id="@+id/bookDetailFragment"
+        android:id="@+id/bookListFragment"
 
-        android:title="Detalles"
+        android:title="Libros"
         />
 </menu>

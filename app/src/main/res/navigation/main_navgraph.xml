@@ -35,4 +35,9 @@
             android:name="arg2"
             app:argType="integer" />
     </fragment>
+    <fragment
+        android:id="@+id/userFragment"
+        android:name="com.utn.booklist.fragments.UserFragment"
+        android:label="fragment_user"
+        tools:layout="@layout/fragment_user" />
 </navigation>

@@ -43,7 +43,7 @@ class BookDetailFragment : Fragment() {
         txtDescription=v.findViewById(R.id.txtDescription)
         btnEdit=v.findViewById(R.id.buttonEdit)
         btnAdd=v.findViewById(R.id.buttonAdd)
-        viewBook=v.findViewById(R.id.imageViewBook)
+        viewBook=v.findViewById(R.id.imageView3)
 
 
         return v
@@ -56,14 +56,15 @@ class BookDetailFragment : Fragment() {
         arg = BookDetailFragmentArgs.fromBundle(requireArguments()).Argumento
         listOfBook = userDao?.getAll()
         listOfBook2=listOfBook!!
-        txtTitle.setText("Titulo:"+listOfBook2[arg].title)
-        txtAuthor.setText("Autor:"+listOfBook2[arg].author)
-        txtYear.setText("año"+listOfBook2[arg].year.toString())
-        txtDescription.setText("Descripción"+listOfBook2[arg].description)
-        Snackbar.make(v, listOfBook2[arg].title, Snackbar.LENGTH_LONG).show()
+        txtTitle.setText("Titulo: "+listOfBook2[arg].title)
+        txtAuthor.setText("Autor: "+listOfBook2[arg].author)
+        txtYear.setText("año: "+listOfBook2[arg].year.toString())
+        txtDescription.setText("Descripción: "+listOfBook2[arg].description)
+        //Snackbar.make(v, listOfBook2[arg].title, Snackbar.LENGTH_LONG).show()
 
         Glide.with(this)
-            .load("https://http2.mlstatic.com/D_NQ_NP_2X_725450-MLA49937952035_052022-F.webp")
+            .load(listOfBook2[arg].image)
+            .override(300, 300)
             .into(viewBook)
 
         btnEdit.setOnClickListener {
