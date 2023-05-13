@@ -9,7 +9,7 @@ class BooksRepository {
         bookList.add(Book(2,"El Aleph2","Borges","","",1945))
 
     }
-    fun getMovies () : MutableList<Book>{
+    fun getBooks () : MutableList<Book>{
         return bookList
     }
 
