@@ -38,8 +38,13 @@ class LoginFragment : Fragment() {
         textPass=v.findViewById(R.id.editTextPassword)
         btnLogin=v.findViewById(R.id.buttonLogin)
         btnNew=v.findViewById(R.id.buttonNew)
-        listOfuser.add(User(1,"marcelo","1234"))
-        listOfuser.add(User(2,"prueba","password"))
+       //listOfuser.add(User(1,"marcelo","1234"))
+        //listOfuser.add(User(2,"prueba","password"))
+        db = AppDatabase.getInstance(v.context)
+        usuariosDao = db?.usuariosDao()
+        usuariosDao?.insertUsuario(User(1,"marcelo","1234"))
+        usuariosDao?.insertUsuario(User(2,"mariela","4567"))
+        usuariosDao?.insertUsuario(User(3,"pedro","4567"))
 
 
         return v
@@ -47,12 +52,6 @@ class LoginFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        db = AppDatabase.getInstance(v.context)
-        usuariosDao = db?.usuariosDao()
-        usuariosDao?.insertUsuario(User(1,"marcelo","1234"))
-        usuariosDao?.insertUsuario(User(2,"mariela","4567"))
-        usuariosDao?.insertUsuario(User(3,"pedro","4567"))
-
 
         btnLogin.setOnClickListener {
             if (usuariosDao?.fetchUserByUser(textUser.text.toString())!=null)
