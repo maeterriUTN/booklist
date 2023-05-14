@@ -18,5 +18,9 @@
         android:id="@+id/createUserFragment"
         android:name="com.utn.booklist.fragments.CreateUserFragment"
         android:label="fragment_create_user"
-        tools:layout="@layout/fragment_create_user" />
+        tools:layout="@layout/fragment_create_user" >
+        <action
+            android:id="@+id/action_createUserFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
 </navigation>
